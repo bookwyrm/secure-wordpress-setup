@@ -33,7 +33,10 @@ $table_prefix  = 'wp_EkUMs54Z_';
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
  */
-define('WP_DEBUG', false);
+// Prevent overriding WP_DEBUG set in environment.php
+if ( !defined('WP_DEBUG') ) {
+  define('WP_DEBUG', false);
+}
 
 define('WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME'] . '/wordpress');
 define('WP_HOME',    'http://' . $_SERVER['SERVER_NAME']);
